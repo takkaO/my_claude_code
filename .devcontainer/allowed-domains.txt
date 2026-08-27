@@ -1,0 +1,25 @@
+# init-firewall.sh が読み込む許可ドメインリスト
+# - 1行に1ドメイン
+# - '#' から始まる行、および空行は無視される
+# - GitHub の IP 範囲は GitHub Meta API から自動取得するためここには含めない
+# - 起動時と cron による5分毎の再解決の両方でこのファイルが読み込まれる
+#   (コンテナ再起動なしでもドメイン追加は次回のcron実行で反映される)
+
+# パッケージ管理
+registry.npmjs.org
+
+# Anthropic / Claude Code
+api.anthropic.com
+sentry.io
+statsig.com
+
+# VSCode / Marketplace
+marketplace.visualstudio.com
+vscode.blob.core.windows.net
+update.code.visualstudio.com
+
+# ユーザー許可ドメインリストを以下に記載
+qiita.com
+zenn.dev
+ja.stackoverflow.com
+stackoverflow.com

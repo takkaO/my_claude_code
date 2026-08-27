@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": ["Bash"],
+    "deny": ["Bash(rm *)", "Bash(sudo *)", "Bash(git push --force *)"]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /workspace/.claude/hooks/smart_approve.py",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
